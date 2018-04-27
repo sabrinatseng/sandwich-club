@@ -64,20 +64,16 @@ public class DetailActivity extends AppCompatActivity {
         TextView descriptionTv = findViewById(R.id.description_tv);
 
         for (int i = 0; i < sandwich.getAlsoKnownAs().size(); i++) {
-            if (i == 0) {alsoKnownTv.append(sandwich.getAlsoKnownAs().get(i));}
-            else {
-                alsoKnownTv.append(", " + sandwich.getAlsoKnownAs().get(i));
-            }
+            alsoKnownTv.append(sandwich.getAlsoKnownAs().get(i) + "\n");
         }
 
         for (int i = 0; i < sandwich.getIngredients().size(); i++) {
-            if (i == 0) {ingredientsTv.append(sandwich.getIngredients().get(i));}
-            else {
-                ingredientsTv.append(", " + sandwich.getIngredients().get(i));
-            }
+            ingredientsTv.append(sandwich.getIngredients().get(i) + "\n");
         }
 
         originTv.setText(sandwich.getPlaceOfOrigin());
+        originTv.append("\n");
         descriptionTv.setText(sandwich.getDescription());
+        descriptionTv.append("\n");
     }
 }
